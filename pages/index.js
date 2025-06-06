@@ -310,7 +310,11 @@ export default function Home() {
               <h1>No Project Found</h1>
             ) : (
               filteredProjects.slice(0, 6).map((pro) => (
-                <Link href="/" key={pro._id} className="procard">
+                <Link
+                  href={`/projects/${pro.slug}`}
+                  key={pro._id}
+                  className="procard"
+                >
                   <div className="proimgbox">
                     <img src={pro.images[0]} alt={pro.title} />
                   </div>
