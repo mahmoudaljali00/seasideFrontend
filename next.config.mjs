@@ -4,8 +4,8 @@ const nextConfig = {
   async rewrites() {
     return [
       {
-        source: "/admin/:path*",
-        destination: "https://seaside-backend.vercel.app/:path*",
+        source: "/admin/",
+        destination: "https://seaside-backend.vercel.app/",
       },
     ];
   },
