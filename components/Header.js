@@ -6,31 +6,30 @@ import { IoMoonSharp } from "react-icons/io5";
 import { LuSun, LuSunMoon } from "react-icons/lu";
 
 export default function Header() {
-
   // darkmode on off
   const [darkMode, setDarkMode] = useState(false);
 
   useEffect(() => {
-  // check local storage for dark mode preference for initial load
-  const isDarkMode = localStorage.getItem('darkMode') === 'true';
-  setDarkMode(isDarkMode);
+    // check local storage for dark mode preference for initial load
+    const isDarkMode = localStorage.getItem("darkMode") === "true";
+    setDarkMode(isDarkMode);
   }, []);
 
   useEffect(() => {
-  // apply dark mode styles when darkmode state changes
-  if (darkMode) {
-    document.body.classList.add('dark');
-    localStorage.setItem('darkMode', true);
-  }else{
-    document.body.classList.remove('dark');
-    localStorage.setItem('darkMode', false);
-  }
+    // apply dark mode styles when darkmode state changes
+    if (darkMode) {
+      document.body.classList.add("dark");
+      localStorage.setItem("darkMode", true);
+    } else {
+      document.body.classList.remove("dark");
+      localStorage.setItem("darkMode", false);
+    }
   }, [darkMode]);
 
   //toggle darkmode function
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);
-  }
+  };
 
   // nav active
   const router = useRouter();
@@ -65,7 +64,10 @@ export default function Header() {
         <nav className="container flex flex-sb">
           <div className=" navlist logo flex gap-2">
             <Link href="/">
-              <img src={`/img/${darkMode ? 'white':'logo-strock'}.png`} alt="logo" />
+              <img
+                src={`/img/${darkMode ? "white" : "logo-strock"}.png`}
+                alt="logo"
+              />
             </Link>
             <ul>
               <li>
@@ -74,10 +76,10 @@ export default function Header() {
                 </Link>
               </li>
             </ul>
-          </div> 
+          </div>
           <div className="navlist flex gap-2">
             <ul className="flex gap-2">
-            <li>
+              <li>
                 <Link
                   href="/"
                   onClick={() => handleLinkClick("/")}
@@ -132,8 +134,8 @@ export default function Header() {
                 </Link>
               </li>
             </ul>
-            <div className="darkmodetoggle" onClick={toggleDarkMode} >
-              {darkMode ? <IoMoonSharp />:<LuSun/>}
+            <div className="darkmodetoggle" onClick={toggleDarkMode}>
+              {darkMode ? <IoMoonSharp /> : <LuSun />}
             </div>
             <button>
               <Link href="/contact">Contact Us</Link>

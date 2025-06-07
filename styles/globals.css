@@ -502,6 +502,7 @@ header.sticky {
 
 .mobilenavlist.active {
   left: 0;
+  z-index: 99999999999999999999999;
 }
 
 .mobilelogo {
