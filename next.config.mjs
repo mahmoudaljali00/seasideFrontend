@@ -4,7 +4,6 @@ const nextConfig = {
   async rewrites() {
     return [
       {
-        basePath: "/",
         source: "/admin/:path*",
         destination: "https://seaside-backend.vercel.app/:path*",
       },
