@@ -3,4 +3,16 @@ const nextConfig = {
   reactStrictMode: true,
 };
 
+module.exports = {
+  async rewrites() {
+    return [
+      {
+        basePath: "/",
+        source: "/admin/:path*",
+        destination: "https://seaside-backend.vercel.app/:path*",
+      },
+    ];
+  },
+};
+
 export default nextConfig;
