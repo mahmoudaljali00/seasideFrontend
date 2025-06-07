@@ -16,21 +16,23 @@ export default function Footer() {
       <footer className="footer">
         <div className="footersec flex flex-center flex-col gap-2">
           <div className="logo">
-            <img src="/img/logo-strock.png" alt="" />
+            <Link href="/">
+              <img src="/img/logo-strock.png" alt="" />
+            </Link>
           </div>
           <div className="ul flex gap-2">
             <li>
               <Link href="/services">Services</Link>
             </li>
             <li>
-              <Link href="/services">Work</Link>
+              <Link href="/projects">Work</Link>
             </li>
             <li>
-              <Link href="/services">Skills</Link>
+              <Link href="/gallery">Gallery</Link>
             </li>
 
             <li>
-              <Link href="/services">Contact</Link>
+              <Link href="/contact">Contact</Link>
             </li>
           </div>
           <ul className="hero_social">
